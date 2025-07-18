@@ -16,4 +16,14 @@ class Doctors (models.Model):
     doc_img = models.ImageField(upload_to='doctors')
 
     def __str__(self):
-        return self.doc_name
+        return 'Dr ' + self.doc_name + ' - (' + self.doc_speciality + ')'
+
+class Bookings (models.Model):
+    patient_name = models.CharField(max_length=100)
+    patient_phone = models.CharField(max_length=10)
+    patient_email = models.EmailField()
+    doc_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
+    booking_date = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.patient_name
