@@ -23,7 +23,8 @@ class Bookings (models.Model):
     patient_phone = models.CharField(max_length=10)
     patient_email = models.EmailField()
     doc_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
-    booking_date = models.DateField(auto_now=True)
+    booking_date = models.DateField()
+    booking_time = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.patient_name
