@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'home.middleware.LogReqMiddleware',
-    'home.middleware.RequestTimeLogging',
 ]
 
 ROOT_URLCONF = 'hospital_management.urls'
